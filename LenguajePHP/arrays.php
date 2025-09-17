@@ -16,4 +16,6 @@ echo $vector[1]. "<br>"; // Imprime "Banana"
 echo $vector2[0]. "<br>"; // Imprime "Rojo"
 echo $vector3[2]; // Imprime "Pájaro"
 
+echo "<p> Arrays bidimensionales </p>";
+
 ?>
