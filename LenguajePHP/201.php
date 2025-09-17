@@ -7,5 +7,9 @@
 </head>
 <body>
     <!-- Muestra 3 frases, cada una en un párrafo utilizando las tres posibilidades que existen de mostrar contenido. Tras ello, introduce dos comentarios, uno de bloque y otro de una línea. -->
+    <?php
+        echo "<p>Esta es la primera frase.</p>";
+        echo "Esta es la segunda frase.<br>";
+    ?>
 </body>
 </html>
