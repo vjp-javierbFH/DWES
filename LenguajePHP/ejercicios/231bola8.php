@@ -2,6 +2,6 @@
 <!-- Este ejercicio se basa en el juego de la Bola 8 mágica. -->
 <?php
 $respuestas = array("Sí", "No", "Quizás", "Claro que sí", "Por supuesto que no", "No lo tengo claro","No lo tengo claro","Seguro","Yo diría que si","Ni de coña");
-$respuestaAleatoria = $respuestas[rand(0,10)];
+$respuestaAleatoria = $respuestas[rand(0,9)];
 echo "Respuesta: " . $respuestaAleatoria;
 ?>
