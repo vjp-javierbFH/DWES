@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    <!-- Escribe un programa que almacene en variables tu nombre, primer apellido, segundo apellido, email, año de nacimiento y teléfono. Luego muéstralos por pantalla dentro de una tabla. -->
     <?php
     $nombre = "Javier";
     $apellido1 = "Fernández";
