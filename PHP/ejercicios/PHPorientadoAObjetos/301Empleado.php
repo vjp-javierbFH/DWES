@@ -56,9 +56,6 @@ class Empleado
     }
 }
 $persona = new Empleado("Javier", "Fernández Huidobro", 1200);
-echo $persona->getNombreCompleto();
-if ($persona->debePagarImpuestos() == true) {
-    echo "<br>Debe pagar impuestos";
-} else {
-    echo "<br>No debe pagar impuestos";
-}
+echo "Nombre completo: " . $persona->getNombreCompleto();
+echo "<br>Sueldo: " .$persona->getSueldo();
+echo "<br>¿Debe pagar impuestos?: " . ($persona->debePagarImpuestos() ? "Sí" : "No");
