@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Subir Imagen con Dimensiones - 405</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
+        label { display: inline-block; width: 100px; }
+        input[type="number"] { width: 80px; padding: 5px; }
+        input[type="file"] { margin: 10px 0; }
+        .error { 
+            color: #d32f2f; 
+            background: #ffebee; 
+            padding: 10px; 
+            border-radius: 5px; 
+            margin: 15px 0;
+            border-left: 4px solid #d32f2f;
+        }
+        .success { color: green; }
+        input[type="submit"] {
+            background: #2e8b57; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;
+        }
+        input[type="submit"]:hover { background: #256f46; }
+    </style>
+</head>
+<body>
+    <h2>Subir Imagen (Solo imágenes - 405)</h2>
+
+    <?php session_start(); ?>
+    <?php if (isset($_SESSION['error'])): ?>
+        <div class="error">
+            <?= htmlspecialchars($_SESSION['error']) ?>
+        </div>
+        <?php unset($_SESSION['error']); ?>
+    <?php endif; ?>
+
+    <form enctype="multipart/form-data" action="405subidaImagen.php" method="POST">
+        <div>
+            <label for="archivoEnviado">Archivo:</label>
+            <input name="archivoEnviado" type="file" accept="image/*" required />
+        </div>
+        <br>
+        <div>
+            <label for="anchura">Anchura:</label>
+            <input type="number" name="anchura" min="1" max="5000" required placeholder="px">
+        </div>
+        <div>
+            <label for="altura">Altura:</label>
+            <input type="number" name="altura" min="1" max="5000" required placeholder="px">
+        </div>
+        <br>
+        <input type="submit" name="btnSubir" value="Subir Imagen" />
+    </form>
+</body>
+</html>
