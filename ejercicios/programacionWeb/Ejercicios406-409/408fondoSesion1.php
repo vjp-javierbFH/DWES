@@ -1,5 +1,5 @@
 <?php
-// 408fondoSesion1.php - Cambiar color de fondo con SESIÓN
+// 408fondoSesion1.php - Cambiar color de fondo con SESIÓN (solo al pulsar Aplicar)
 
 session_start();
 
@@ -13,24 +13,33 @@ $coloresPermitidos = [
     'lavender'    => 'Lavanda'
 ];
 
-// === Procesar selección del usuario ===
+// === Color actual: de sesión o por defecto ===
+$colorActual = $_SESSION['color_fondo'] ?? 'white';
+
+// === Procesar solo si se pulsa el botón "Aplicar" ===
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['color'])) {
     $color = $_POST['color'];
     if (array_key_exists($color, $coloresPermitidos)) {
         $_SESSION['color_fondo'] = $color;
+        // Recargar para aplicar el nuevo color
+        header('Location: ' . $_SERVER['PHP_SELF']);
+        exit;
     }
 }
-
-// === Color actual (de sesión o por defecto) ===
-$colorActual = $_SESSION['color_fondo'] ?? 'white';
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Color de Fondo - Sesión 1 (408)</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: <?= htmlspecialchars($colorActual) ?>;
@@ -40,27 +49,32 @@ $colorActual = $_SESSION['color_fondo'] ?? 'white';
             flex-direction: column;
             transition: background-color 0.5s ease;
         }
+
         .container {
             max-width: 700px;
             margin: 40px auto;
             padding: 30px;
             background: rgba(255, 255, 255, 0.92);
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             text-align: center;
             flex: 1;
         }
+
         h1 {
             color: #2c3e50;
             margin-bottom: 20px;
         }
+
         p {
             margin: 15px 0;
             font-size: 1.1em;
         }
+
         form {
             margin: 25px 0;
         }
+
         select {
             padding: 12px 20px;
             font-size: 1.1em;
@@ -69,12 +83,15 @@ $colorActual = $_SESSION['color_fondo'] ?? 'white';
             background: white;
             cursor: pointer;
             width: 220px;
+            transition: all 0.3s;
         }
+
         select:focus {
             outline: none;
             border-color: #2980b9;
             box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
         }
+
         input[type="submit"] {
             margin-left: 10px;
             padding: 12px 24px;
@@ -84,10 +101,14 @@ $colorActual = $_SESSION['color_fondo'] ?? 'white';
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
         }
+
         input[type="submit"]:hover {
             background: #2980b9;
+            transform: translateY(-2px);
         }
+
         .enlace {
             display: inline-block;
             margin-top: 30px;
@@ -98,9 +119,11 @@ $colorActual = $_SESSION['color_fondo'] ?? 'white';
             border-radius: 8px;
             font-weight: bold;
         }
+
         .enlace:hover {
             background: #27ae60;
         }
+
         .info {
             margin-top: 20px;
             font-size: 0.9em;
@@ -109,34 +132,38 @@ $colorActual = $_SESSION['color_fondo'] ?? 'white';
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>Página 1 - Color con Sesión</h1>
-    
-    <p>Elige un color de fondo. Se guardará en la <strong>sesión</strong> (hasta cerrar el navegador).</p>
+    <div class="container">
+        <h1>Página 1 - Color con Sesión</h1>
 
-    <form method="POST">
-        <select name="color" onchange="this.form.submit()">
-            <?php foreach ($coloresPermitidos as $valor => $nombre): ?>
-                <option value="<?= $valor ?>" <?= $colorActual === $valor ? 'selected' : '' ?>>
-                    <?= $nombre ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-        <input type="submit" value="Aplicar">
-    </form>
+        <p>Elige un color y pulsa <strong>Aplicar</strong>. Se guardará en la sesión.</p>
 
-    <p>
-        <a href="408fondoSesion2.php" class="enlace">
-            Ir a Página 2
-        </a>
-    </p>
+        <form method="POST">
+            <select name="color">
+                <?php foreach ($coloresPermitidos as $valor => $nombre): ?>
+                    <option value="<?= $valor ?>" <?= $colorActual === $valor ? 'selected' : '' ?>>
+                        <?= $nombre ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <input type="submit" value="Aplicar">
+        </form>
 
-    <div class="info">
-        Color actual: <strong><?= $coloresPermitidos[$colorActual] ?></strong>
+        <p>
+            <a href="408fondoSesion2.php" class="enlace">
+                Ir a Página 2
+            </a>
+        </p>
+
+        <div class="info">
+            Color actual: <strong><?= $coloresPermitidos[$colorActual] ?></strong>
+            <br>
+            (Se mantiene mientras no cierres el navegador)
+        </div>
     </div>
-</div>
 
 </body>
+
 </html>

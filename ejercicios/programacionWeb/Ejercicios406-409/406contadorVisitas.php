@@ -31,6 +31,7 @@ setcookie($nombreCookie, $visitas, $duracionCookie, '/');
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Contador de Visitas - 406</title>
@@ -42,18 +43,21 @@ setcookie($nombreCookie, $visitas, $duracionCookie, '/');
             color: #333;
             text-align: center;
         }
+
         .container {
             max-width: 600px;
             margin: 40px auto;
             padding: 30px;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             color: #2c3e50;
             margin-bottom: 20px;
         }
+
         .mensaje {
             font-size: 1.4em;
             padding: 20px;
@@ -61,16 +65,19 @@ setcookie($nombreCookie, $visitas, $duracionCookie, '/');
             border-radius: 10px;
             font-weight: bold;
         }
+
         .primera {
             background: #d5f5e3;
             color: #2e8b57;
             border: 2px solid #2e8b57;
         }
+
         .repetida {
             background: #fef9e1;
             color: #d35400;
             border: 2px solid #f39c12;
         }
+
         .btn {
             display: inline-block;
             margin-top: 20px;
@@ -82,10 +89,12 @@ setcookie($nombreCookie, $visitas, $duracionCookie, '/');
             font-weight: bold;
             transition: 0.3s;
         }
+
         .btn:hover {
             background: #c0392b;
             transform: translateY(-2px);
         }
+
         .footer {
             margin-top: 40px;
             font-size: 0.9em;
@@ -93,30 +102,32 @@ setcookie($nombreCookie, $visitas, $duracionCookie, '/');
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>Contador de Visitas</h1>
+    <div class="container">
+        <h1>Contador de Visitas</h1>
 
-    <?php if ($visitas === 1): ?>
-        <div class="mensaje primera">
-            ¡Bienvenido! Esta es tu <strong>primera visita</strong>.
-        </div>
-    <?php else: ?>
-        <div class="mensaje repetida">
-            Has visitado esta página <strong><?= $visitas ?></strong> veces.
-        </div>
-    <?php endif; ?>
+        <?php if ($visitas === 1): ?>
+            <div class="mensaje primera">
+                ¡Bienvenido! Esta es tu <strong>primera visita</strong>.
+            </div>
+        <?php else: ?>
+            <div class="mensaje repetida">
+                Has visitado esta página <strong><?= $visitas ?></strong> veces.
+            </div>
+        <?php endif; ?>
 
-    <a href="406contadorVisitas.php?reiniciar=1" class="btn" 
-       onclick="return confirm('¿Estás seguro de que quieres reiniciar el contador?');">
-       Reiniciar Contador
-    </a>
-</div>
+        <a href="406contadorVisitas.php?reiniciar=1" class="btn"
+            onclick="return confirm('¿Estás seguro de que quieres reiniciar el contador?');">
+            Reiniciar Contador
+        </a>
+    </div>
 
-<div class="footer">
-    <p>Las visitas se guardan en una cookie que dura 1 año.</p>
-</div>
+    <div class="footer">
+        <p>Las visitas se guardan en una cookie que dura 1 año.</p>
+    </div>
 
 </body>
+
 </html>
