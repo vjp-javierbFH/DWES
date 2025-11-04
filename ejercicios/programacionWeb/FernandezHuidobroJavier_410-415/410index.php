@@ -1,4 +1,5 @@
 <?php
+// Validar el inicio de sesión
 if(isset($_POST['enviar'])){
     $usuario = $_POST['usuario'] ?? '';
     $contrasena = $_POST['paswd'] ?? '';
@@ -33,7 +34,7 @@ if(isset($_POST['enviar'])){
 </head>
 
 <body>
-
+    <!-- Formulario -->
     <div class="formulario">
         <h2>Inicio de sesión</h2>
         <form action="411login.php" method="post">
@@ -52,10 +53,6 @@ if(isset($_POST['enviar'])){
             </fieldset>
         </form>
     </div>
-
-    <?php
-
-    ?>
 </body>
 
 </html>
