@@ -12,5 +12,7 @@
             "email": "jbfernandezh01@iesvjp.es"
         }
     ],
-    "require": {}
+    "require": {
+        "monolog/monolog": "^3.9"
+    }
 }
