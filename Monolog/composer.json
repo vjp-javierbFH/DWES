@@ -1,0 +1,16 @@
+{
+    "name": "monologos/holamonolog",
+    "description": "Proyecto que incluye como librería la última versión de Monolog",
+    "autoload": {
+        "psr-4": {
+            "Monologos\\Holamonolog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "1DAW - Javier Fernandez  Huidobro",
+            "email": "jbfernandezh01@iesvjp.es"
+        }
+    ],
+    "require": {}
+}
