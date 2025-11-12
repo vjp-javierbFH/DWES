@@ -1,0 +1,17 @@
+{
+    "name": "jbfernandezh01/goutteprueba",
+    "autoload": {
+        "psr-4": {
+            "Jbfernandezh01\\Goutteprueba\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "1DAW - Javier Fernandez  Huidobro",
+            "email": "jbfernandezh01@iesvjp.es"
+        }
+    ],
+    "require": {
+        "fabpot/goutte": "^4.0"
+    }
+}
