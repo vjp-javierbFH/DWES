@@ -1,6 +1,5 @@
 <?php
 // 608nuevoUsuario.php - Script para procesar el registro de nuevos usuarios
-// Autor: Javier Fernandez Huidobro
 
 // Verificar si se ha accedido mediante el método POST
 // Esto evita que se acceda directamente al archivo desde la URL sin enviar datos
