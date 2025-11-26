@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Formulario donde el usuario introduce los datos de registro -->
+    <form action="608nuevoUsuario.php" method="POST">
+        <label>Nombre completo</label>
+        <input type="text" name="nombre" required maxlength="100">
+
+        <label>Nombre de usuario</label>
+        <input type="text" name="usuario" required maxlength="50">
+
+        <label>Contraseña</label>
+        <input type="password" name="password" required minlength="6">
+
+        <label>Email</label>
+        <input type="email" name="email" required maxlength="100">
+
+        <button type="submit">Crear cuenta</button>
+    </form>
+</body>
+</html>
