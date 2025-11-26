@@ -5,6 +5,7 @@
 -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,23 +17,30 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center; /* Centrado horizontal */
-            align-items: center;     /* Centrado vertical */
-            height: 100vh;           /* Altura completa de la ventana */
+            justify-content: center;
+            /* Centrado horizontal */
+            align-items: center;
+            /* Centrado vertical */
+            height: 100vh;
+            /* Altura completa de la ventana */
             background-color: #f0f0f0;
         }
+
         /* Estilos del contenedor del formulario */
         form {
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Sombra suave */
         }
+
         /* Estilos para las etiquetas de los campos */
         label {
             display: block;
             margin-bottom: 5px;
         }
+
         /* Estilos para los campos de entrada */
         input {
             width: 100%;
@@ -41,21 +49,25 @@
             border: 1px solid #ccc;
             border-radius: 3px;
         }
+
         /* Estilos para el botón de envío */
         button {
-            background-color: #4CAF50; /* Verde */
+            background-color: #4CAF50;
+            /* Verde */
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 3px;
             cursor: pointer;
         }
+
         /* Efecto hover para el botón */
         button:hover {
             background-color: #45a049;
         }
     </style>
 </head>
+
 <body>
     <!-- Formulario que envía los datos a 608nuevoUsuario.php mediante POST -->
     <form action="608nuevoUsuario.php" method="POST">
@@ -79,4 +91,5 @@
         <button type="submit">Crear cuenta</button>
     </form>
 </body>
+
 </html>
