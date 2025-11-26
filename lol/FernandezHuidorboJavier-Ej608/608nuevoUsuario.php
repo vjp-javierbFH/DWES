@@ -48,7 +48,7 @@ try {
             El usuario <strong>$usuario</strong> ha sido introducido en el sistema 
             con la contraseña <strong>$password</strong>.
           </h2>";
-    echo "<p style='text-align:center;'><a href='608resgistro.php' style='color:#c89b3c;text-decoration:none;'>Volver al registro</a></p>";
+    echo "<p style='text-align:center;'><a href='608resgistro.html' style='color:#c89b3c;text-decoration:none;'>Volver al registro</a></p>";
 
 } catch (PDOException $e) { // Captura la excepción
     if ($e->getCode() == 23000) {
