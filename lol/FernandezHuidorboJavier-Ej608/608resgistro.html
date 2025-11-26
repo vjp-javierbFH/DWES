@@ -1,30 +1,39 @@
+<!--
+    Documento: 608resgistro.html
+    Descripción: Formulario de registro de usuarios.
+    Autor: Javier Fernandez Huidobro
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de registro</title>
     <style>
+        /* Estilos generales del cuerpo para centrar el contenido */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            justify-content: center; /* Centrado horizontal */
+            align-items: center;     /* Centrado vertical */
+            height: 100vh;           /* Altura completa de la ventana */
             background-color: #f0f0f0;
         }
+        /* Estilos del contenedor del formulario */
         form {
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
         }
+        /* Estilos para las etiquetas de los campos */
         label {
             display: block;
             margin-bottom: 5px;
         }
+        /* Estilos para los campos de entrada */
         input {
             width: 100%;
             padding: 8px;
@@ -32,34 +41,41 @@
             border: 1px solid #ccc;
             border-radius: 3px;
         }
+        /* Estilos para el botón de envío */
         button {
-            background-color: #4CAF50;
+            background-color: #4CAF50; /* Verde */
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 3px;
             cursor: pointer;
         }
+        /* Efecto hover para el botón */
         button:hover {
             background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <!-- Formulario donde el usuario introduce los datos de registro -->
+    <!-- Formulario que envía los datos a 608nuevoUsuario.php mediante POST -->
     <form action="608nuevoUsuario.php" method="POST">
+        <!-- Campo para el Nombre Completo -->
         <label>Nombre completo</label>
         <input type="text" name="nombre" required maxlength="100">
 
+        <!-- Campo para el Nombre de Usuario (Login) -->
         <label>Nombre de usuario</label>
         <input type="text" name="usuario" required maxlength="50">
 
+        <!-- Campo para la Contraseña -->
         <label>Contraseña</label>
         <input type="password" name="password" required minlength="6">
 
+        <!-- Campo para el Email -->
         <label>Email</label>
         <input type="email" name="email" required maxlength="100">
 
+        <!-- Botón para enviar el formulario -->
         <button type="submit">Crear cuenta</button>
     </form>
 </body>
