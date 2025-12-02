@@ -1,4 +1,4 @@
-version: '3.8'
+version: '2.9.2'
 
 
 services:
@@ -19,16 +19,17 @@ services:
 
   # Database Service
   db:
-    image: postgres
+    image: postgres:16-alpine
     container_name: postgres
     volumes:
-      - ./postgresql/data:/var/lib/postgresql/data
+      - ./postgresql/data:/var/lib/postgresql
     ports:
       - "5432:5432"
     environment:
       POSTGRES_DB: blog
       POSTGRES_USER: root
       POSTGRES_PASSWORD: password
+
 
 
   # Web Server Service
